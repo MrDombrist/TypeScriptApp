@@ -3,6 +3,7 @@ import * as dotenv from "dotenv"
 import sequelize from "./config/database.js";
 import cors from "cors";
 import router from './routes/index.js';
+import errorMiddleware from "./middleware/ErrorHandlingMiddleware.js";
 
 dotenv.config();
 
@@ -18,6 +19,8 @@ app.use('/', router);
 app.get('/', (req, res)=>{
     res.status(200).json({message: 'Ура! Всё заработало!'})
 });
+
+app.use(errorMiddleware)
 
 const start = async () => {
     try{
