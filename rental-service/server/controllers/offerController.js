@@ -1,6 +1,7 @@
-import { adaptOfferToClient } from "../adapters/offerAdapter.js";
+import { adaptOfferToClient, adaptFullOfferToClient } from "../adapters/offerAdapter.js";
 import ApiError from "../error/ApiError.js";
 import { Offer } from "../models/offer.js";
+import { User } from "../models/user.js";
 
 async function getAllOffers(req, res, next){
     try{
@@ -20,20 +21,16 @@ export async function createOffer(req, res, next) {
      features, commentsCount, latitude, longitude, userId
    } = req.body;
 
-
    if (!req.files?.previewImage || req.files.previewImage.length === 0) {
      return next(ApiError.badRequest('Превью изображение обязательно для загрузки'));
    }
 
-
    const previewImagePath = `/static/${req.files.previewImage[0].filename}`;
-
 
    let processedPhotos = [];
    if (req.files?.photos) {
      processedPhotos = req.files.photos.map(file => `/static/${file.filename}`);
    }
-
 
    let parsedFeatures = [];
    if (features) {
@@ -43,7 +40,6 @@ export async function createOffer(req, res, next) {
        parsedFeatures = features.split(',');
      }
    }
-
 
    const offer = await Offer.create({
      title,
@@ -65,7 +61,6 @@ export async function createOffer(req, res, next) {
      longitude,
      authorId: userId
    });
-
 
    return res.status(201).json(offer);
  } catch (error) {
@@ -90,9 +85,42 @@ export async function getFullOffer(req, res, next) {
     return res.json(adaptedOffer);
     
   } catch (error) {
-
     return next(ApiError.internal('Error getting full offer details: ' + error.message));
   }
 }
 
-export {getAllOffers};
+// Новая функция для получения избранных предложений
+export async function getFavoriteOffers(req, res, next) {
+  try {
+    const offers = await Offer.findAll({
+      where: { isFavorite: true }
+    });
+    
+    const adaptedOffers = offers.map(adaptOfferToClient);
+    res.status(200).json(adaptedOffers);
+  } catch (error) {
+    next(ApiError.internal('Не удалось получить избранные предложения'));
+  }
+}
+
+// Новая функция для добавления/удаления предложения в/из избранное
+export async function toggleFavorite(req, res, next) {
+  try {
+    const { offerId, status } = req.params;
+    const isFavorite = status === '1';
+    
+    const offer = await Offer.findByPk(offerId);
+    if (!offer) {
+      return next(ApiError.badRequest('Предложение не найдено'));
+    }
+    
+    await offer.update({ isFavorite });
+    
+    const adaptedOffer = adaptOfferToClient(offer);
+    res.status(200).json(adaptedOffer);
+  } catch (error) {
+    next(ApiError.internal('Ошибка при обновлении избранного'));
+  }
+}
+
+export { getAllOffers };
