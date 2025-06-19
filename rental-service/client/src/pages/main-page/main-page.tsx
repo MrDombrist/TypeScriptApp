@@ -1,19 +1,19 @@
-import { CitiesCardList } from "../../components/cities-card-list/cities-card-list";
-import { Logo } from "../../components/logo/logo";
-import { FullOffer } from "../../types/offer";
-
-type MainPageProps = {
-    offers: FullOffer[];
+import { CitiesCardList } from "../../components/cities-card-list/cities-card-list.js";
+import { Logo } from "../../components/logo/logo.js";
+import { OffersList } from "../../types/offer.js";
+import { offersList } from './../../mocks/offers-list';
+type MainPageProps={
+  rentalOffersCount:number;
+  offersList:OffersList[];
 }
-
-function MainPage({ offers }: MainPageProps) {
+function MainPage({rentalOffersCount,offersList}:MainPageProps) {
     return(
         <div className="page page--gray page--main">
       <header className="header">
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-              <Logo />
+              <Logo></Logo>
             </div>
             <nav className="header__nav">
               <ul className="header__nav-list">
@@ -78,7 +78,7 @@ function MainPage({ offers }: MainPageProps) {
           <div className="cities__places-container container">
             <section className="cities__places places">
               <h2 className="visually-hidden">Places</h2>
-              <b className="places__found">{offers.length} places to stay in Amsterdam</b>
+              <b className="places__found">312 places to stay in Amsterdam</b>
               <form className="places__sorting" action="#" method="get">
                 <span className="places__sorting-caption">Sort by</span>
                 <span className="places__sorting-type" tabIndex={0}>
@@ -94,7 +94,9 @@ function MainPage({ offers }: MainPageProps) {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <CitiesCardList offers={offers} />
+              <div className="cities__places-list places__list tabs__content">
+                  <CitiesCardList offersList={offersList}/>
+              </div>
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>
@@ -103,6 +105,6 @@ function MainPage({ offers }: MainPageProps) {
         </div>
       </main>
     </div>
-);
+    );
     }
     export { MainPage };

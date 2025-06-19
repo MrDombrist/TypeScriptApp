@@ -1,136 +1,138 @@
-import { FullOffer } from '../types/offer';
+import { FullOffer } from "../types/offer";
 
-export const offers: FullOffer[] = [
+const offers: FullOffer[] = [
   {
-    id: '1',
-    title: 'Beautiful & luxurious apartment at great location',
+    id: 'c5d7e9f1-a2b3-4c56-d789-e0123456789f',
+    title: 'Sunset Terrace Suite',
+    description: 'Luxurious penthouse with panoramic city views, rooftop terrace, and premium amenities. Perfect for romantic getaways.',
     type: 'apartment',
-    price: 120,
+    price: 450,
+    images: ['../../img/21.png', '../../img/22.png', '../../img/23.png', '../../img/24.png', '../../img/25.png', '../../img/26.png'],
     city: {
-      name: 'Amsterdam',
+      name: 'Rome',
       location: {
-        latitude: 52.370216,
-        longitude: 4.895168,
-        zoom: 10
+        latitude: 41.9028,
+        longitude: 12.4964,
+        zoom: 13
       }
     },
     location: {
-      latitude: 52.3909553943508,
-      longitude: 4.85309666406198,
-      zoom: 8
+      latitude: 41.9048,
+      longitude: 12.4914,
+      zoom: 16
     },
-    isFavorite: false,
-    isPremium: true,
-    rating: 4.8,
-    description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.',
-    bedrooms: 3,
-    goods: ['Wi-Fi', 'Washing machine', 'Towels', 'Heating', 'Coffee machine', 'Baby seat', 'Kitchen', 'Dishwasher', 'Cable TV', 'Fridge'],
+    goods: [
+      'Heating', 'Wi-Fi', 'Fridge', 'Laptop friendly workspace',
+      'Air conditioning', 'Washer', 'Towels', 'Balcony',
+      'Dishwasher', 'Kitchen', 'Smart TV', 'Iron', 'Hair dryer'
+    ],
     host: {
-      id: 1,
-      name: 'Angelina',
       isPro: true,
-      avatarUrl: 'img/avatar-angelina.jpg'
+      name: 'Marco',
+      avatarUrl: '../../img/avatar-marco.jpg'
     },
-    images: ['img/room.jpg', 'img/apartment-01.jpg', 'img/apartment-02.jpg', 'img/apartment-03.jpg', 'img/studio-01.jpg'],
+    isPremium: true,
+    isFavorite: false,
+    rating: 4.8,
+    bedrooms: 3,
+    maxAdults: 6
+  },
+  {
+    id: 'f2g3h4i5-j6k7-8901-lmno-pqrstuvwxyz1',
+    title: 'Industrial Warehouse Loft',
+    description: 'Converted warehouse with exposed brick walls and high ceilings. Unique urban living experience.',
+    type: 'loft',
+    price: 180,
+    images: ['../../img/27.png', '../../img/28.png', '../../img/29.png', '../../img/30.png', '../../img/31.png', '../../img/32.png'],
+    city: {
+      name: 'Berlin',
+      location: {
+        latitude: 52.5200,
+        longitude: 13.4050,
+        zoom: 12
+      }
+    },
+    location: {
+      latitude: 52.5170,
+      longitude: 13.3889,
+      zoom: 14
+    },
+    goods: ['Wi-Fi', 'Heating', 'Kitchen', 'Coffee machine', 'Workspace', 'Parking'],
+    host: {
+      isPro: false,
+      name: 'Katarina',
+      avatarUrl: '../../img/avatar-katarina.jpg'
+    },
+    isPremium: false,
+    isFavorite: true,
+    rating: 4.3,
+    bedrooms: 2,
     maxAdults: 4
   },
   {
-    id: '2',
-    title: 'Wood and stone place',
-    type: 'room',
-    price: 80,
+    id: 'z9y8x7w6-v5u4-t3s2-r1q0-ponmlkjihgfe',
+    title: 'Minimalist Garden Studio',
+    description: 'Peaceful studio apartment with private garden access. Eco-friendly and sustainably designed.',
+    type: 'studio',
+    price: 125,
+    images: ['../../img/33.png', '../../img/34.png', '../../img/35.png', '../../img/36.png', '../../img/37.png', '../../img/38.png'],
     city: {
-      name: 'Paris',
+      name: 'Copenhagen',
       location: {
-        latitude: 48.85661,
-        longitude: 2.351499,
-        zoom: 10
+        latitude: 55.6761,
+        longitude: 12.5683,
+        zoom: 13
       }
     },
     location: {
-      latitude: 48.868610000000004,
-      longitude: 2.342499,
-      zoom: 8
+      latitude: 55.6781,
+      longitude: 12.5643,
+      zoom: 15
     },
-    isFavorite: true,
-    isPremium: false,
-    rating: 4.5,
-    description: 'Cozy room in the heart of Paris with authentic decor and modern amenities.',
-    bedrooms: 1,
-    goods: ['Wi-Fi', 'Heating', 'Kitchen', 'Towels', 'Coffee machine'],
+    goods: ['Wi-Fi', 'Fridge', 'Towels', 'Garden access', 'Bicycle', 'Organic toiletries'],
     host: {
-      id: 2,
-      name: 'Pierre',
-      isPro: false,
-      avatarUrl: 'img/avatar-max.jpg'
+      isPro: true,
+      name: 'Lars',
+      avatarUrl: '../../img/avatar-lars.jpg'
     },
-    images: ['img/room.jpg', 'img/apartment-02.jpg', 'img/studio-01.jpg'],
+    isPremium: false,
+    isFavorite: false,
+    rating: 4.6,
+    bedrooms: 1,
     maxAdults: 2
   },
   {
-    id: '3',
-    title: 'Canal View Prinsengracht',
-    type: 'apartment',
-    price: 132,
+    id: 'a9b8c7d6-e5f4-3210-9876-543210abcdef',
+    title: 'Mountain View Chalet',
+    description: 'Traditional Alpine chalet with stunning mountain views. Fireplace, sauna, and outdoor hot tub included.',
+    type: 'house',
+    price: 520,
+    images: ['../../img/39.png', '../../img/40.png', '../../img/41.png', '../../img/42.png', '../../img/43.png', '../../img/44.png'],
     city: {
-      name: 'Amsterdam',
+      name: 'Zurich',
       location: {
-        latitude: 52.370216,
-        longitude: 4.895168,
-        zoom: 10
+        latitude: 47.3769,
+        longitude: 8.5417,
+        zoom: 12
       }
     },
     location: {
-      latitude: 52.3909553943508,
-      longitude: 4.929309666406198,
-      zoom: 8
+      latitude: 47.3889,
+      longitude: 8.5217,
+      zoom: 14
     },
-    isFavorite: false,
-    isPremium: false,
-    rating: 4.2,
-    description: 'Modern apartment with beautiful canal views in historic Amsterdam.',
-    bedrooms: 2,
-    goods: ['Wi-Fi', 'Washing machine', 'Kitchen', 'Dishwasher', 'Heating'],
+    goods: ['Fireplace', 'Wi-Fi', 'Kitchen', 'Towels', 'Sauna', 'Hot tub', 'Mountain bikes', 'Ski storage'],
     host: {
-      id: 3,
-      name: 'Hans',
       isPro: true,
-      avatarUrl: 'img/avatar-angelina.jpg'
+      name: 'Ingrid',
+      avatarUrl: '../../img/avatar-ingrid.jpg'
     },
-    images: ['img/apartment-02.jpg', 'img/apartment-01.jpg', 'img/apartment-03.jpg'],
-    maxAdults: 3
-  },
-  {
-    id: '4',
-    title: 'Nice, cozy, warm big bed apartment',
-    type: 'apartment',
-    price: 180,
-    city: {
-      name: 'Cologne',
-      location: {
-        latitude: 50.9375,
-        longitude: 6.9603,
-        zoom: 10
-      }
-    },
-    location: {
-      latitude: 50.9375,
-      longitude: 6.9603,
-      zoom: 8
-    },
-    isFavorite: true,
     isPremium: true,
-    rating: 5.0,
-    description: 'Luxurious apartment in the center of Cologne with all modern amenities.',
-    bedrooms: 2,
-    goods: ['Wi-Fi', 'Washing machine', 'Towels', 'Heating', 'Coffee machine', 'Kitchen', 'Dishwasher', 'Cable TV', 'Fridge', 'Air conditioning'],
-    host: {
-      id: 4,
-      name: 'Klaus',
-      isPro: true,
-      avatarUrl: 'img/avatar-max.jpg'
-    },
-    images: ['img/apartment-03.jpg', 'img/apartment-01.jpg', 'img/room.jpg', 'img/studio-01.jpg'],
-    maxAdults: 4
+    isFavorite: true,
+    rating: 4.9,
+    bedrooms: 4,
+    maxAdults: 8
   }
 ];
+
+export {offers};

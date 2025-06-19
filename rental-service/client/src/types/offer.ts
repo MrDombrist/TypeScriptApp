@@ -10,7 +10,6 @@ export type CityOffer = {
 };
 
 export type HostOffer = {
-  id: number;
   name: string;
   isPro: boolean;
   avatarUrl: string;
@@ -34,4 +33,15 @@ export type FullOffer = {
   maxAdults: number;
 };
 
-export type OfferList = FullOffer[];
+export type OffersList={
+    id:string;
+    title:string;
+    type:string;
+    price:number;
+    city:CityOffer;
+    location:OfferLocation;
+    isFavorite:boolean;
+    isPremium:boolean;
+    rating:number;
+    previewImage: string;
+}
