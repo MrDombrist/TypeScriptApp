@@ -8,16 +8,16 @@ export const offersList: OffersList[] = [
     price: 450,
     previewImage: 'img/21.png',
     city: {
-      name: 'Rome',
+      name: 'Amsterdam',
       location: {
-        latitude: 41.9028,
-        longitude: 12.4964,
+        latitude: 52.3909553943508,
+        longitude: 4.85309666406198,
         zoom: 13
       }
     },
     location: {
-      latitude: 41.9048,
-      longitude: 12.4914,
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
       zoom: 16
     },
     isPremium: true,

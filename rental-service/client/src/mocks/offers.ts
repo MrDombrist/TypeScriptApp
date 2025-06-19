@@ -9,16 +9,16 @@ const offers: FullOffer[] = [
     price: 450,
     images: ['../../img/21.png', '../../img/22.png', '../../img/23.png', '../../img/24.png', '../../img/25.png', '../../img/26.png'],
     city: {
-      name: 'Rome',
+      name: 'Amsterdam',
       location: {
-        latitude: 41.9028,
-        longitude: 12.4964,
+        latitude: 52.4361,
+        longitude: 4.9312,
         zoom: 13
       }
     },
     location: {
-      latitude: 41.9048,
-      longitude: 12.4914,
+      latitude: 52.4361,
+      longitude: 4.9312,
       zoom: 16
     },
     goods: [
@@ -35,7 +35,8 @@ const offers: FullOffer[] = [
     isFavorite: false,
     rating: 4.8,
     bedrooms: 3,
-    maxAdults: 6
+    maxAdults: 6,
+    previewImage:'../../img/21.png'
   },
   {
     id: 'f2g3h4i5-j6k7-8901-lmno-pqrstuvwxyz1',
@@ -67,7 +68,8 @@ const offers: FullOffer[] = [
     isFavorite: true,
     rating: 4.3,
     bedrooms: 2,
-    maxAdults: 4
+    maxAdults: 4,
+    previewImage:'../../img/27.png',
   },
   {
     id: 'z9y8x7w6-v5u4-t3s2-r1q0-ponmlkjihgfe',
@@ -99,7 +101,8 @@ const offers: FullOffer[] = [
     isFavorite: false,
     rating: 4.6,
     bedrooms: 1,
-    maxAdults: 2
+    maxAdults: 2,
+    previewImage:'../../img/33.png',
   },
   {
     id: 'a9b8c7d6-e5f4-3210-9876-543210abcdef',
@@ -131,7 +134,8 @@ const offers: FullOffer[] = [
     isFavorite: true,
     rating: 4.9,
     bedrooms: 4,
-    maxAdults: 8
+    maxAdults: 8,
+    previewImage:'../../img/39.png',
   }
 ];
 
